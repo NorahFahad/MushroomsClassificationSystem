@@ -1,0 +1,76 @@
+?- mushroomProperties(X).
+X = presenceWorms ;
+X = presenceScales ;
+X = odor ;
+X = taste ;
+X = capColor ;
+X = capShape ;
+X = gillColor ;
+X = veilColor ;
+X = ring ;
+X = sporeColor ;
+X = capSurface.
+
+
+?- edible(X).
+Edible mushroom properties?
+X = hasPresenceWorms ;
+X = hasPresenceScales ;
+X = pleasantOdor ;
+X = sweetTaste ;
+X = greenCapColor ;
+X = purpleCapColor ;
+X = sunkenCapShape ;
+X = redGillColor ;
+X = orangeGillColor ;
+X = brownVeilColor ;
+X = flaringRing ;
+X = blackSporeColor ;
+X = orangeSporeColor ;
+X = purpleSporeColor ;
+X = yellowSporeColor.
+
+
+?- poisonous(X).
+Poisonous mushroom properties?
+X = noPresenceWorms ;
+X = noPresenceScales ;
+X = groovesCapSurface ;
+X = badOdor ;
+X = bitterTaste ;
+X = sourTaste ;
+X = badTaste ;
+X = convexCapShape ;
+X = buffGillColor ;
+X = greenGillColor ;
+X = yellowVeilColor ;
+X = noRing ;
+X = greenSporeColor.
+
+
+?- safe(orangeGillColor,pleasantOdor).
+true .
+
+?- safe(yellowVeilColor,badOdor).
+false.
+
+?- notSafe(sunkenCapShape,badOdor).
+false.
+
+?- notSafe(yellowVeilColor,badOdor).
+true .
+
+?- notSafe(sunkenCapShape,sweetTaste).
+false.
+
+?- safe(flaringRing).
+true.
+
+?- safe(sourTaste).
+false.
+
+?- notSafe(sourTaste).
+true.
+
+?- notSafe(hasPresenceWorms).
+false.
